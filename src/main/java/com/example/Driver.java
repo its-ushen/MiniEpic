@@ -1,16 +1,9 @@
 package com.example;
-import com.example.statistics.ScoreCalculator;
-
-
-import com.example.database.ScoreFetcher;
-import com.example.model.ScoreStats;
+import com.example.database.DBAuthentication;
+import com.example.gui.LoginGUI;
 
 public class Driver {
     public static void main(String[] args) {
-        ScoreCalculator scoreCalculator = new ScoreCalculator(new ScoreFetcher());
-        
-        ScoreStats myStats = scoreCalculator.calculateUserStats("Ushen", "Novice");
-        System.out.println(myStats.getMean());
-
+        new LoginGUI(new DBAuthentication());
     }
 }
